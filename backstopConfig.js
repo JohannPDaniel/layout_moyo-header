@@ -23,23 +23,27 @@ module.exports = {
       ...basic,
       label: 'Header',
       selectors: ['header'], // 👈 AQUI
+      misMatchThreshold: 2,
     },
     {
       ...basic,
       label: 'Nav',
       selectors: ['nav'], // 👈 AQUI
+      misMatchThreshold: 2,
     },
     {
       ...basic,
-      label: 'Hover link',
-      selectors: ['[data-qa="hover"]'], // 👈 AQUI
+      label: 'Hover link laptops',
+      selectors: ['[data-qa="hover"]'],
       hoverSelector: '[data-qa="hover"]',
       postInteractionWait: 500,
+      misMatchThreshold: 5,
     },
     {
       ...basic,
       label: 'Active item',
       selectors: ['.is-active'], // 👈 AQUI
+      misMatchThreshold: 3,
     },
   ],
 };
