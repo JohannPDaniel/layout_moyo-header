@@ -1,49 +1,48 @@
 'use strict';
 
-const backstop = require('@mate-academy/backstop-config');
-
-const baseUrl =
-  'https://johannpdaniel.github.io/layout_hello-world/moyo-header/';
-
-const basic = {
-  url: baseUrl,
-  referenceUrl: baseUrl,
-  delay: 1000,
-};
-
 module.exports = {
-  ...backstop,
-  fileNameTemplate: '{scenarioLabel}_{viewportLabel}',
+  id: 'backstop_header',
+
+  engine: 'puppeteer',
+
   viewports: [
-    { name: '1024px', width: 1024, height: 768 },
-    { name: '1200px', width: 1200, height: 768 },
+    {
+      name: '1024px',
+      width: 1024,
+      height: 768,
+    },
+    {
+      name: '1200px',
+      width: 1200,
+      height: 768,
+    },
   ],
+
   scenarios: [
     {
-      ...basic,
-      label: 'Header',
-      selectors: ['header'], // 👈 AQUI
+      label: 'Header - estado normal',
+      url: 'https://johannpdaniel.github.io/layout_moyo-header/',
+      delay: 1000,
+      selectors: ['header'],
       misMatchThreshold: 2,
     },
+
     {
-      ...basic,
-      label: 'Nav',
-      selectors: ['nav'], // 👈 AQUI
-      misMatchThreshold: 2,
-    },
-    {
-      ...basic,
-      label: 'Hover link laptops',
+      label: 'Header - estado hover',
+      url: 'https://johannpdaniel.github.io/layout_moyo-header/',
+      delay: 1000,
       selectors: ['[data-qa="hover"]'],
       hoverSelector: '[data-qa="hover"]',
       postInteractionWait: 500,
       misMatchThreshold: 5,
     },
-    {
-      ...basic,
-      label: 'Active item',
-      selectors: ['.is-active'], // 👈 AQUI
-      misMatchThreshold: 3,
-    },
   ],
+
+  paths: {
+    bitmaps_reference: 'backstop_data/bitmaps_reference',
+    bitmaps_test: 'backstop_data/bitmaps_test',
+    engine_scripts: 'backstop_data/engine_scripts',
+    html_report: 'backstop_data/html_report',
+    ci_report: 'backstop_data/ci_report',
+  },
 };
