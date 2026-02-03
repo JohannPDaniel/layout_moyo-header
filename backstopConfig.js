@@ -3,7 +3,7 @@
 const backstop = require('@mate-academy/backstop-config');
 
 const baseUrl =
-  'https://JohannPDaniel.github.io/layout_hello-world/moyo-header/';
+  'https://johannpdaniel.github.io/layout_hello-world/moyo-header/';
 
 const basic = {
   url: baseUrl,

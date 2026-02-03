@@ -13,6 +13,7 @@ node_modules
 backstop_data/**
 !backstop_data/bitmaps_reference/
 !backstop_data/bitmaps_reference/**
+!backstop_data/html_report
 
 dist
 .cache
