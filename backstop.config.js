@@ -4,17 +4,13 @@ module.exports = {
   id: 'backstop_header',
   engine: 'puppeteer',
 
+  engineOptions: {
+    args: ['--no-sandbox', '--disable-setuid-sandbox'],
+  },
+
   viewports: [
-    {
-      name: '1024px',
-      width: 1024,
-      height: 768,
-    },
-    {
-      name: '1200px',
-      width: 1200,
-      height: 768,
-    },
+    { name: '1024px', width: 1024, height: 768 },
+    { name: '1200px', width: 1200, height: 768 },
   ],
 
   scenarios: [
@@ -23,9 +19,6 @@ module.exports = {
       url: 'https://johannpdaniel.github.io/layout_moyo-header/',
       delay: 1000,
       misMatchThreshold: 2,
-      // ❌ SEM selectors
-      // ❌ SEM hover
-      // ✔️ Screenshot da página inteira
     },
   ],
 
