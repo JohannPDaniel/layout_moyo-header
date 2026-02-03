@@ -1,3 +1,8 @@
+* {
+  margin: 0;
+  padding: 0
+}
+
 :root {
   --color-primary: #00a8e8; /* ITEM #5 */
 }
@@ -6,13 +11,12 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 20px 60px;
+  padding: 20px 60px;
   font-family: Roboto, sans-serif;
 }
 
 .nav-list {
   display: flex;
-  gap: 25px;
   list-style: none;
   width: 100%;
 }
@@ -31,13 +35,15 @@
 
 .nav-item {
   position: relative;
+  margin-inline: 18px
 }
 
 .nav-link {
   text-decoration: none;
   color: #000;
   text-transform: uppercase;
-  padding: 8px 0;
+  height: 48px;
+  line-height: 48px;
   display: inline-block;
 }
 
@@ -46,12 +52,12 @@
 }
 
 /* link ativo */
-.nav-item.active .nav-link {
+.nav-item.is-active .nav-link {
   color: var(--color-primary);
 }
 
 /* traço do active */
-.nav-item.active .nav-link::after {
+.nav-item.is-active .nav-link::after {
   content: '';
   position: absolute;
   left: 0;

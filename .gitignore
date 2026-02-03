@@ -9,7 +9,11 @@ node_modules
 .DS_Store
 
 # Generated files
-backstop_data
+# Ignora tudo do backstop EXCETO as referências
+backstop_data/**
+!backstop_data/bitmaps_reference/
+!backstop_data/bitmaps_reference/**
+
 dist
 .cache
 .parcel-cache
